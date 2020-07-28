@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Pham Thuy Linh's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+  <!--   -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+
+</style>
+
+
+<!-- css for port-->
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #666;
+   color: white;
+}
+
+
+</style>
+
+
+<!--java script for port -->
+<script>
+  filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+
+</script>
+
+
+<body class="w3-light" style="background-color: #fee970">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
+  
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+  <embed src="music/tabun.mp3" autostart="true" loop="false">  
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding" style="font-family: 'Dancing Script', cursive;">Pham Thuy Linh</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+
+<h2>PORTFOLIO</h2>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> All</button>
+  <button class="btn" onclick="filterSelection('2D')"> 2D </button>
+  <button class="btn" onclick="filterSelection('3D')"> 3D  Modeling</button>
+  <button class="btn" onclick="filterSelection('Motion')"> Motion </button>
+  <button class="btn" onclick="filterSelection('Others')"> Others work</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+
+<!-- column 2D -->
+
+<div class="row">
+  <div class="column 2D">
+    <div class="content">
+      <img src="image/seomaymau.jpg" alt="seomay" style="width:100%">
+      <h4>Character design: Seo May</h4>
+    </div>
+  </div>
+  <div class="column 2D">
+    <div class="content">
+      <img src="image/chanpaocolor.jpg" alt="chanpao" style="width:100%">
+      <h4>Character design: Chan Pao</h4>
+    </div>
+  </div>
+  <div class="column 2D">
+    <div class="content">
+      <img src="image/thannuimau.jpg" alt="God" style="width:100%">
+      <h4>Character design: God</h4>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="column 2D">
+    <div class="content">
+      <img src="image/tyle1.jpg" alt="size" style="width:100%">
+      <h4>Character design: Size of the charecters </h4>
+    </div>
+  </div>
+  <div class="column 2D">
+    <div class="content">
+      <img src="image/tyle.jpg" alt="size" style="width:100%">
+      <h4>Character design: Size of the charecters with colors</h4>
+    </div>
+  </div>
+  <div class="column 2D">
+    <div class="content">
+      <iframe width="465" height="260" src="https://www.youtube.com/embed/rQWcAE3KCrg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h4>Storyboarding: Project Seo May</h4>
+      <p> The story tells about the journey of little girl Seo May and her friend Chan Pao to find   water for the village during the drought. Set in the northern mountains of Vietnam.</p>
+    </div>
+  </div>
+ 
+<!-- end column 2D -->
+
+
+<!-- column 3D -->
+
+
+
+
+  <div class="column 3D">
+    <div class="content">
+      <img src="image/Pokemon.jpg" alt="Pokemon" style="width:100%">
+    </div>
+  </div>
+  <div class="column 3D">
+    <div class="content">
+      <img src="image/Timemachine.jpg" alt="Timemachine" style="width:100%">
+    </div>
+  </div>
+  <div class="column 3D">
+    <div class="content">
+      <img src="image/Barrel.png" alt="Barrel" style="width:100%">
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column 3D">
+    <div class="content">
+      <img src="image/Bedroom1.png" alt="Bedroom" style="width:100%">
+    </div>
+  </div>
+
+<!-- end column 3D -->
+
+
+<!-- column Motion -->
+
+
+<div class="column Motion">
+    <div class="content">
+      <iframe width="465" height="260" src="https://www.youtube.com/embed/wkvV3BBHtOI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h4>Kinetic: What's my name?</h4>
+      <p> Kinetic of the song “What’s my name?” soundtrack of Disney’s “Descendants 2”.</p>
+    </div>
+  </div>
+<div class="column Motion">
+    <div class="content">
+      <iframe width="465" height="260" src="https://www.youtube.com/embed/_v9kdwpLvt4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h4>History of Book</h4>
+      <p>After researching, I completed a short video about the history of the book.</p>
+    </div>
+  </div>
+<div class="column Motion">
+    <div class="content">
+      <iframe width="465" height="260" src="https://www.youtube.com/embed/1L7Ob-z7dEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+      <h4>Apple pen 3D motion</h4>
+      <p> Motion based on Pikotaro’s “PPAP” MV. When making these motions I specifically focused on the character’s facial expressions.</p>
+    </div>
+  </div>
+
+<div class="row">
+<div class="column Motion">
+    <div class="content">
+      <iframe width="465" height="260" src="https://www.youtube.com/embed/TtBlTTOoRf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h4>[TPTH_R1] 光の旋律 | Hikari no senritsu [GRIM]</h4>
+      <p> This is a cover video that my friend and I used to participate in a chorus battle called "The Path To Horizon" in Jan 2017. I participated as a vocalist and animator with the alias Caramel Rin. </p>
+    </div>
+  </div>
+
+<!-- end column Motion -->
+
+
+<!-- column Others -->
+<div class="column Others">
+    <div class="content">
+      <img src="image/Cheese.jpg" alt="Cheese" style="width:100%">
+    </div>
+  </div>
+<div class="column Others">
+    <div class="content">
+      <img src="image/Book.jpg" alt="Book" style="width:100%">
+    </div>
+  </div>
+
+  
+<!-- END GRID -->
+</div>
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+
+
+
+
+  <!-- About section -->
+  <div class="w3-container w3-center w3-text-light-grey w3-padding-32" id="about" style="background-color: #2c3258">
+    <h2><b>About Me</b></h2>
+    <img src="image/me.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h2 style="font-family: 'Dancing Script', cursive;">Pham Thuy Linh</h2>
+      <p> I started studying Graphic Design at FPT University in 2018. I like animation in general, including 2D and 3D. I am constantly learning and hoping that in the future I can create my own animated films. In my free time I often watch movies or make handmade things. I also interested in listen to music too.
+      </p>
+
+      <br>
+
+      <h4>Education </h4>
+        <p><b>Studying Graphic Design at FPT University.</b></p>
+        <p>Summer2018 – Now </p>
+      
+
+        <p><b>Language</b></p>
+        <p>Vietnamese - Native Language</p>
+        <p>English - Second Language</p>
+
+        <br>
+
+        <h4>Experience</h4>
+        <p><b>2018 - Now</b></p>
+        <p>Work as a designer at FPT University’s Vovinam Club. </p>
+
+        <p><b>Jan/2020 - Apr/2020</b></p>
+        <p>Internship at Onteractive </p>
+        <br>
+
+      <p>Bẽhance: https://www.behance.net/linhpham17</p>
+      <p>mail: linhptha130215@.fpt.edu.vn</p>
+      <p>tel: (+84)913861105</p>
+
+      <hr class="w3-opacity">
+      <h4 class="w3-padding-16">Softwares</h4>
+      <p class="w3-wide">Photoshop</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:70%; background-color: #fee970"></div>
+      </div>
+       <p class="w3-wide">Illustrater</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:65%; background-color: #fee970"></div>
+      </div>
+       <p class="w3-wide">Indesign</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:75%; background-color: #fee970"></div>
+      </div>
+      <p class="w3-wide">Web Design</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:50%; background-color: #fee970"></div>
+      </div>
+      <p class="w3-wide">Maya</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:70%; background-color: #fee970"></div>
+      </div>
+       <p class="w3-wide">Blender</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center" style="width:80%; background-color: #fee970"></div>
+      </div>
+        <br>
+       
+        </div>
+      </div>
+    </div>
+
+  <!-- Contact section -->
+  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact" style="background-color: #dbd7d4">
+    <div class="w3-content" style="max-width:600px">
+      <h2 class="w3-center"><b>Contact Me</b></h2>
+      <p>Fill out the form and fill me in with the details :) I love meeting new people!</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+ 
+<!-- Footer -->
+<style>
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+</style>
+
+<div class="footer">
+  <p>© 2020 Kyararinpupurin, All Rights Reserved.</p>
+  <!-- social media buttons inside my footer -->
+
+  <!-- css code for social media -->
+  <style>
+.fa {
+  padding: 15px;
+  font-size: 20px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+
+
+
+</style>
+
+<!-- html code for social media -->
+<a href="https://www.facebook.com/phamthuy.linh.2199" class="fa fa-facebook"></a>
+<a href="https://twitter.com/Linh_neko" class="fa fa-twitter"></a>
+<a href="https://www.youtube.com/channel/UCPvnzOJzxh_uMenMMUBwBNA" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/kyararin_pu_pu_rin" class="fa fa-instagram"></a>
+<a href="https://soundcloud.com/kyararin-pu-purin" class="fa fa-soundcloud"></a>
+
+
+</div>
+
+
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+</body>
+</html>
